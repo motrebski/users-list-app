@@ -1,0 +1,16 @@
+<!-- Display user data table after loading data -->
+<ng-container *ngIf="!(isLoading$ | async)">
+    <users-table></users-table>
+</ng-container>
+<!-- Display skeleton on loading data -->
+<ng-container *ngIf="isLoading$ | async">
+  <div skeleton
+    skeletonWidth="100%"
+    skeletonHeight="3.499rem">
+  </div>
+  <div skeleton
+    skeletonWidth="100%"
+    skeletonHeight="23.246rem"
+    skeletonCustomClass="users-data-table">
+  </div>
+</ng-container>

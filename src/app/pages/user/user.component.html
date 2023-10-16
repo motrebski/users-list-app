@@ -1,0 +1,24 @@
+<mat-list role="list" >
+    <h1 matSubheader>User Details</h1>
+    <!-- Display user data after loading data  -->
+    <ng-container *ngIf="!(isLoading$ | async)">
+        <ng-container *ngIf="user$ | async as user">
+        <ng-container *ngFor="let item of userDataKeys">
+            <mat-list-item role="listitem" >
+                <span matListItemTitle>{{item}}:</span>
+                <span matListItemLine>{{user[item]}}</span>
+            </mat-list-item>
+        </ng-container>
+        </ng-container>
+     </ng-container>
+     <!-- Display skeleton on loading data  -->
+     <ng-container *ngIf="isLoading$ | async">
+        <ng-container *ngFor="let item of skeletonItems">
+            <div skeleton
+                skeletonWidth="13.5rem"
+                skeletonHeight="3.025rem"
+                skeletonCustomClass="user" role="listitem">
+            </div>
+        </ng-container>
+    </ng-container>
+</mat-list>

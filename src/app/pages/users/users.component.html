@@ -1,0 +1,19 @@
+<mat-grid-list [cols]="cols" rowHeight="6.25rem" >
+  <!-- Display users after loading data  -->
+  <ng-container *ngIf="!(isLoading$ | async)">
+    <ng-container *ngIf="users$ | async as users">
+        <mat-grid-tile *ngFor="let user of users" class="background"  mat-button>
+          <a id="{{user.id}}" attr.aria-labelledby="{{user.id}}" routerLink="/user/{{user.id}}" mat-menu-item>
+            <span>{{user?.name}}</span>
+          </a>
+        </mat-grid-tile>
+    </ng-container>
+  </ng-container>
+  <!-- Display skeleton on loading data  -->
+  <ng-container *ngIf="isLoading$ | async">
+    <ng-container *ngFor="let item of skeletonItems">
+        <mat-grid-tile class="skeleton" mat-button>
+        </mat-grid-tile>
+    </ng-container>
+  </ng-container>
+</mat-grid-list>

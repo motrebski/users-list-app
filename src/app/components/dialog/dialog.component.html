@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Edit User Details</h1>
+<mat-dialog-content>
+  <!-- Edit user data fields  -->
+  <mat-form-field>
+    <mat-label>Name:</mat-label>
+    <input aria-label="Edit name" matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email:</mat-label>
+    <input aria-label="Edit email" matInput [(ngModel)]="data.email">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Username:</mat-label>
+    <input aria-label="Edit username" matInput [(ngModel)]="data.username">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Website:</mat-label>
+    <input aria-label="Edit website" matInput [(ngModel)]="data.website">
+  </mat-form-field>
+</mat-dialog-content>
+<!-- Cancel and save buttons  -->
+<div mat-dialog-actions>
+  <button id="cancel-button" aria-labelledby="cancel-button" mat-button (click)="onNoClick()">Cancel</button>
+  <button id="save-button" aria-labelledby="save-button" mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button>
+</div>

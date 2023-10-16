@@ -1,0 +1,16 @@
+.background {
+    background: lightblue;
+}
+.background:hover {
+    background: #8AC7DB;
+}
+a {
+    color: #000000DE;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-decoration: auto;
+}
